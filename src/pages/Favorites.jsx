@@ -6,10 +6,10 @@ function Favorites() {
   
     const { favorites, removeFavorites } = useContext(FavoritesContext);
 
-    const listFavorites = favorites.map(favorite => {
+    const listFavorites = favorites.map(({ id, images })  => {
         return(
-            <aside key={favorite.id} className="gif_cont_box flex">
-                <img src={favorite.images.fixed_height.url} ></img>
+            <aside key={id} className="gif_cont_box flex">
+                <img src={images.fixed_height.url} ></img>
             </aside>
         )    
     });
