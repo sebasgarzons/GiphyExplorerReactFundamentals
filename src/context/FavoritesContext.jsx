@@ -11,14 +11,14 @@ export function FavoritesProvider({ children }) {
         localStorage.setItem('favorites', JSON.stringify(favorites))
     }, [favorites]);
 
-  function addFavorite(gif) {
+  const addFavorite = (gif) => {
       if (favorites.some(fav => fav.id === gif.id)){
           return
       }
       setFavorites([...favorites, gif])
   }
 
-  function removeFavorites() {
+  const removeFavorites = () => {
     localStorage.removeItem('favorites')
     setFavorites([])
     };
